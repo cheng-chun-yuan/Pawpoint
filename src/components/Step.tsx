@@ -30,7 +30,6 @@ function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: numbe
 const StepCounter: React.FC = () => {
   const [distance, setDistance] = useState<number>(0); // 总行走距离（米）
   const [steps, setSteps] = useState<number>(0); // 估算的步数
-
   useEffect(() => {
     let lastPosition: Position | null = null;
 
@@ -57,6 +56,7 @@ const StepCounter: React.FC = () => {
     console.log("steps",steps);
 
     return () => navigator.geolocation.clearWatch(watchId);
+    //eslint-disable-next-line
   }, []);
 
   return (
